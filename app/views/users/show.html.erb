@@ -1,0 +1,13 @@
+<h1>A profile for <%= @user.name %></h1>
+
+<h3>logged on as <%= current_user.name %></h3>
+
+<% @user.book_reviews.each do |review| %>
+    <p><%= review.book.title %></p>
+    <p><%= review.text %></p>
+    <p><%= review.rating %>/5</p><br>
+<% end %>
+<p><%= link_to "Write a new review", new_book_review_path %></p>
+<p><%= link_to "See all reviews", book_reviews_path %>
+<br>
+<p><%= button_to "Logout", "/logout", method: :delete %></p>

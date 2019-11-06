@@ -1,0 +1,17 @@
+<% if @errors %>
+  <% @errors.each do |error| %>
+      <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<h1>Add a book to the database </h1>
+
+<%= form_for @book do |f| %>
+    <p><%= f.label "Title:" %></p>
+    <%= f.text_field :title %>
+    <p><%= f.label "Author:" %></p>
+    <%= f.text_field :author %>
+    <p><%= f.label "Page Number:" %></p>
+    <%= f.text_field :page_number %>
+    <p><%= f.submit %></p>
+<% end %>

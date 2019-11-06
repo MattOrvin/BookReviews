@@ -1,0 +1,14 @@
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %> 
+  <% end %>
+<% end %>
+
+<h1> Sign in </h1>
+<%= form_for :user, url: '/sessions' do |f| %>
+    <p><%= f.label "Username:" %></p> 
+    <%= f.text_field :name %>
+    <p><%= f.label "Password:" %></p> 
+    <%= f.password_field :password %>
+    <p><%= f.submit "Submit" %></p>
+<% end %>

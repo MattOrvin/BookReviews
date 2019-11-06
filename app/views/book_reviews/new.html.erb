@@ -1,0 +1,18 @@
+<h1> Write a New Book Review </h1>
+
+<%= form_for @book_review do |f| %>
+    <p><%= f.label "Select Book:" %></p>
+    <%= f.collection_select :book_id, @books, :id, :title %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <p><%= f.label "Rating:" %></p>
+    <%= f.text_field :rating %>
+    <p><%= f.label "Review Text:" %></p>
+    <%= f.text_area :text %>
+    <p><%= f.submit %></p>
+<% end %> 
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+      <p><%= error %></p>
+  <% end %>
+<% end %>

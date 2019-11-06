@@ -1,0 +1,21 @@
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+
+<h1>Make a New Account </h1>
+
+<%= form_for @user do |f| %>
+    <p><%= f.label "Name:" %></p>
+    <%= f.text_field :name %>
+    <p><%= f.label "Password:" %></p>
+    <%= f.password_field :password %>
+    <p><%= f.label "Password Confirmation:" %></p>
+    <%= f.password_field :password_confirmation %>
+    <p><%= f.submit %></p>
+<% end %>
+<br>
+<br>
+<%= link_to "Already have an account? Sign in here", new_session_path %>

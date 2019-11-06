@@ -1,0 +1,7 @@
+<h1>A Review of <%= @book_review.book.title %></h1>
+<p>by <%= @book_review.user.name %></p>
+<p><%= @book_review.text %></p>
+<p><%= @book_review.rating %>/5</p>
+
+<p><%= link_to "Edit this review", edit_book_review_path(@book_review) %></p>
+<p><%= link_to "Delete this review", book_review_path(@book_review), method: :delete %></p>
